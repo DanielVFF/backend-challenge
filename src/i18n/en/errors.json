@@ -1,0 +1,16 @@
+{
+  "unauthorized": "Invalid credentials",
+  "invalid_token": "Invalid token",
+  "bad_request": "Invalid request",
+  "not_found": "Resource not found",
+  "conflict": "Resource already exists",
+  "google_user_error": "Error getting Google user",
+  "google_token_error": "Error getting Google access token",
+  "google_email_not_verified": "Google email not verified",
+  "hash_expired": "Hash expired or invalid",
+  "invalid_code": "Invalid code",
+  "user_not_found": "User not found",
+  "invalid_refresh_token": "Invalid refresh token",
+  "email_already_exists": "Email already exists",
+  "email_already_registered": "Email already registered"
+}

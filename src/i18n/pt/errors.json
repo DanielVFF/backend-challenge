@@ -1,0 +1,16 @@
+{
+  "unauthorized": "Credenciais inválidas",
+  "invalid_token": "Token inválido",
+  "bad_request": "Requisição inválida",
+  "not_found": "Recurso não encontrado",
+  "conflict": "Recurso já existe",
+  "google_user_error": "Erro ao obter o usuário do Google",
+  "google_token_error": "Erro ao obter o token de acesso do Google",
+  "google_email_not_verified": "Email do Google não verificado",
+  "hash_expired": "Hash expirado ou inválido",
+  "invalid_code": "Código inválido",
+  "user_not_found": "Usuário não encontrado",
+  "invalid_refresh_token": "Token de refresh inválido",
+  "email_already_exists": "Email já existe",
+  "email_already_registered": "Email já cadastrado"
+}

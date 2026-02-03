@@ -1,0 +1,10 @@
+{
+  "cache_cleared": "Cache limpo com sucesso",
+  "cache_info_retrieved": "Informações do cache recuperadas com sucesso",
+  "cache_switched_redis": "Alterado para cache Redis com sucesso",
+  "cache_switched_redis_failed": "Falha ao alterar para cache Redis",
+  "cache_switched_machine": "Alterado para cache em memória com sucesso",
+  "code_sent": "Código de confirmação enviado para seu email",
+  "password_reset": "Senha redefinida com sucesso",
+  "login_success": "Login realizado com sucesso"
+}

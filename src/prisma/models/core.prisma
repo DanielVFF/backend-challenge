@@ -1,0 +1,21 @@
+model EmailLog {
+    id            String          @id @default(cuid())
+    email_type    String
+    recipient     String
+    subject       String?
+    requester_ip  String?
+    user_agent    String?
+    status        EmailStatusEnum @default(PENDING)
+    error_message String?
+    sent_at       DateTime?
+    message_id    String?
+    created_at    DateTime        @default(now())
+
+    @@map("email_log")
+}
+
+enum EmailStatusEnum {
+    PENDING
+    SENT
+    FAILED
+}

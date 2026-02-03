@@ -1,0 +1,3 @@
+[submodule "src/core"]
+	path = src/core
+	url = git@github.com:Abade-Vitor/core-nest.git

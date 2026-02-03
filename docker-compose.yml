@@ -1,0 +1,73 @@
+services:
+  # nestjs:
+  #   build:
+  #     context: .
+  #     dockerfile: ./src/core/docker/nestjs/Dockerfile
+  #   container_name: nestjs
+  #   working_dir: /usr/src/app
+  #   ports:
+  #     - '${NESTJS_PORT:-3000}:3000'
+  #   env_file:
+  #     - .env
+  #   networks:
+  #     - backend
+  #   depends_on:
+  #     - postgres
+  #     - redis
+  redis:
+    image: redis:7-alpine
+    ports:
+      - '${REDIS_PORT:-6379}:6379'
+    networks:
+      - backend
+    volumes:
+      - redis_data:/data
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+  postgres:
+    image: postgres:16-alpine
+    container_name: postgres
+    ports:
+      - '${POSTGRES_PORT:-5432}:5432'
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-cinema}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB:-cinema}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - backend
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-cinema}']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+    env_file:
+      - .env
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - app-network
+    healthcheck:
+      test: ['CMD-SHELL', 'rabbitmqctl status']
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  redis_data:
+  postgres_data:
+  rabbitmq_data:
+
+networks:
+  backend:
+  app-network:
