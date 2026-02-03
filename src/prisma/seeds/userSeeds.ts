@@ -21,7 +21,7 @@ export async function seedUsers(prisma: PrismaClient) {
     },
     {
       name: 'Maria Santos',
-      email: 'maria.santos@gorilla.com',
+      email: 'maria.santos@cinema.com',
       cellphone: '11977777777',
       password: hashedPassword,
     },

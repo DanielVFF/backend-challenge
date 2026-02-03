@@ -2,9 +2,9 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-## Gorrila API
+## Cinema API
 
-[Nest](https://github.com/nestjs/nest) API used for our learning system.
+[Nest](https://github.com/nestjs/nest) API used for our cinema system.
 
 ## Project setup
 
